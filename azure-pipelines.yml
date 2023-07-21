@@ -1,0 +1,14 @@
+# azure-pipelines.yml
+trigger: none
+
+jobs:
+- job: RunPowerShellScript
+  displayName: 'Run PowerShell Script'
+  pool:
+    vmImage: 'windows-latest'
+  steps:
+  - task: PowerShell@2
+    displayName: 'Run PowerShell script'
+    inputs:
+      targetType: 'filePath'
+      filePath: 'hello.ps1'
